@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./navbar.css";
 import avatar from "./avatarMan.jpg";
-import { NotificationsNone, Language, Settings } from "@material-ui/icons";
+import {
+  NotificationsNone,
+  Language,
+  Settings,
+  ArrowDropDown,
+} from "@material-ui/icons";
+import { logoutStart } from "../../context/authContext/AuthActions";
+import { AuthContext } from "../../context/authContext/AuthContext";
 export default function Navbar() {
+  const { dispatch } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logoutStart(dispatch);
+  };
   return (
     <div className="navbar">
       <div className="navbarWrapper">
@@ -21,7 +33,16 @@ export default function Navbar() {
           <div className="navbarIconContainer">
             <Settings />
           </div>
-          <img src={avatar} alt="" className="navAvatar" width={"30px"} />
+          <div className="profile">
+            <img src={avatar} alt="" className="navAvatar" width={"30px"} />
+            <span className="name">John</span>
+            <div className="options">
+              <div className="set"></div>
+              <hr />
+              <button onClick={handleLogout}>Log Out</button>
+            </div>
+            <ArrowDropDown />
+          </div>
         </div>
       </div>
     </div>
