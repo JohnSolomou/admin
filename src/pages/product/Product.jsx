@@ -1,8 +1,7 @@
-import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./product.css";
 import { Publish } from "@material-ui/icons";
-import { ListItemText } from "@material-ui/core";
+
 // import { productData } from "../../dummyData";
 // import Chart from "../../components/chart/Chart";
 export default function Product() {
@@ -13,7 +12,7 @@ export default function Product() {
     <div className="product">
       <div className="productTitleContainer">
         <h1 className="productTitle">Movie</h1>
-        <Link to="/newProduct">
+        <Link to="/newMovie">
           <button className="productAddButton">Create</button>
         </Link>
       </div>
@@ -64,7 +63,7 @@ export default function Product() {
           <div className="productFormRight">
             <div className="productUpload">
               <img className="productUploadImg" src={movie.img} alt="" />
-              <label for="file">
+              <label htmlFor="file">
                 <Publish />
               </label>
               <input type="file" id="file" style={{ display: "none" }} />

@@ -7,13 +7,13 @@ import {
   Settings,
   ArrowDropDown,
 } from "@material-ui/icons";
-import { logoutStart } from "../../context/authContext/AuthActions";
+import { logout } from "../../context/authContext/AuthActions";
 import { AuthContext } from "../../context/authContext/AuthContext";
 export default function Navbar() {
   const { dispatch } = useContext(AuthContext);
 
   const handleLogout = () => {
-    logoutStart(dispatch);
+    logout(dispatch);
   };
   return (
     <div className="navbar">

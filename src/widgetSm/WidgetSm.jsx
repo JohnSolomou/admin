@@ -3,16 +3,17 @@ import axios from "axios";
 import "./widgetSm.css";
 // import woman from "../../src/woman.jpg";
 import { Visibility } from "@material-ui/icons";
+import { SERVER_URL } from "../constants/constant";
 export default function WidgetSm() {
   const [newUsers, setNewUsers] = useState([]);
 
   useEffect(() => {
     const getNewUsers = async () => {
       try {
-        const res = await axios.get("/users?new=true", {
+        const res = await axios.get(SERVER_URL + "/users?new=true", {
           headers: {
             token:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYTA1ZjliZTRiZmEzYTBhOWMxYTQ5ZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3MzcwNDUwNiwiZXhwIjoxNjc0MTM2NTA2fQ.HMMoV-ThhfWE0ZkW6IZClsc2LB_2zf6cuQBR3yaJqjE",
+              "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
           },
         });
         setNewUsers(res.data);

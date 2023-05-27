@@ -7,6 +7,7 @@ import "./Home.css";
 import WidgetLg from "../../widgetLg/WidgetLg";
 import WidgetSm from "../../widgetSm/WidgetSm";
 import axios from "axios";
+import { SERVER_URL } from "../../constants/constant";
 
 export default function Home() {
   const MONTHS = useMemo(
@@ -32,10 +33,10 @@ export default function Home() {
   useEffect(() => {
     const getStats = async () => {
       try {
-        const res = await axios.get("/users/stats", {
+        const res = await axios.get(SERVER_URL + "/users/stats", {
           headers: {
             token:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYTA1ZjliZTRiZmEzYTBhOWMxYTQ5ZCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NjU1MTQ2NCwiZXhwIjoxNjc3ODQ3NDY0fQ.mU_ODEYdMjXowDmD6jEVwa2-aTGTHVj942qwOjDGOP0",
+              "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
           },
         });
         const statsList = res.data.sort(function (a, b) {

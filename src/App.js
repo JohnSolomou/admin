@@ -15,7 +15,8 @@ import UserList from "./pages/userList/UserList";
 import Product from "./pages/product/Product";
 import User from "./pages/user/User";
 import ProductList from "./pages/productList/ProductList";
-import NewProduct from "./pages/newproduct/NewProduct";
+import NewMovie from "./pages/newmovie/NewMovie";
+
 import { AuthContext } from "./context/authContext/AuthContext";
 function App() {
   const { user } = useContext(AuthContext);
@@ -48,11 +49,9 @@ function App() {
               <Route path="/movie/:productId">
                 <Product />
               </Route>
-              <Route path="/newProduct">
-                <NewProduct />
-              </Route>
-              <Route path="/newproduct">
-                <Product />
+
+              <Route path="/newMovie">
+                <NewMovie />
               </Route>
             </div>
           </>
