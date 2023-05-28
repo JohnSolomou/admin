@@ -26,7 +26,7 @@ export const getMovies = async (dispatch) => {
 export const deleteMovie = async (id, dispatch) => {
   dispatch(deleteMovieStart());
   try {
-    await axios.delete(SERVER_URL + "/movies/" + id, {
+    await axios.delete(SERVER_URL + "/movies" + id, {
       headers: {
         token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
       },

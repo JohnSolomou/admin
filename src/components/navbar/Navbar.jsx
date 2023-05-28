@@ -7,14 +7,12 @@ import {
   Settings,
   ArrowDropDown,
 } from "@material-ui/icons";
+
 import { logout } from "../../context/authContext/AuthActions";
 import { AuthContext } from "../../context/authContext/AuthContext";
 export default function Navbar() {
   const { dispatch } = useContext(AuthContext);
 
-  const handleLogout = () => {
-    logout(dispatch);
-  };
   return (
     <div className="navbar">
       <div className="navbarWrapper">
@@ -32,16 +30,15 @@ export default function Navbar() {
           </div>
           <div className="navbarIconContainer">
             <Settings />
-          </div>
-          <div className="profile">
-            <img src={avatar} alt="" className="navAvatar" width={"30px"} />
-            <span className="name">John</span>
-            <div className="options">
-              <div className="set"></div>
-              <hr />
-              <button onClick={handleLogout}>Log Out</button>
-            </div>
+          </div>{" "}
+          <div className="profile  ">
+            {" "}
             <ArrowDropDown />
+            <div className="options">
+              {" "}
+              <span onClick={() => dispatch(logout())}>Log Out</span>
+            </div>
+            <img src={avatar} alt="" className="navAvatar" width={"30px"} />
           </div>
         </div>
       </div>

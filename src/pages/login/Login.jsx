@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import "./login.css";
 import { login } from "../../context/authContext/apiCalls";
-import Navbar from "../../components/navbar/Navbar";
+// import Navbar from "../../components/navbar/Navbar";
 import { AuthContext } from "../../context/authContext/AuthContext";
 
 export default function Login() {
@@ -15,8 +15,7 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <Navbar />
+    <div className="loginPage">
       <h1 className="title">Login Netflix-clone Admin</h1>
       <div className="login">
         <form className="loginForm">

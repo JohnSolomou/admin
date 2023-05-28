@@ -55,11 +55,12 @@ navAvatar {
   display: flex;
   flex-direction: column;
   position: absolute;
+  border: 1px solid #555;
 }
 .set {
   display: flex;
 }
-.name {
+.set.name {
   justify-content: center;
   align-items: center;
 }
@@ -68,6 +69,6 @@ navAvatar {
   flex-direction: column;
   position: absolute;
 }
-button {
+span {
   cursor: pointer;
 }

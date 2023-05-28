@@ -17,7 +17,7 @@ export default function ProductList() {
     deleteMovie(id, dispatch);
     // setData(data.filter((item) => item.id !== id));
   };
-  console.log(movies);
+
   const columns = [
     { field: "_id", headerName: "ID", width: 60 },
     {
