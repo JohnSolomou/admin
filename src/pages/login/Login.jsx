@@ -16,7 +16,7 @@ export default function Login() {
 
   return (
     <div className="loginPage">
-      <h1 className="title">Login Netflix-clone Admin</h1>
+      <h1 className="title">Login To Netflix-clone Admin</h1>
       <div className="login">
         <form className="loginForm">
           <input
@@ -37,7 +37,7 @@ export default function Login() {
             onClick={handleLogin}
             disabled={isFetching}
           >
-            Login
+            Login To Netflix-Clone Admin
           </button>
         </form>
       </div>
