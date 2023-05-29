@@ -16,18 +16,17 @@ import Product from "./pages/product/Product";
 import User from "./pages/user/User";
 import ProductList from "./pages/productList/ProductList";
 import NewMovie from "./pages/newmovie/NewMovie";
-
+// import HomePage from "./pages/homepage/HomePage";
 import { AuthContext } from "./context/authContext/AuthContext";
 function App() {
   const { user } = useContext(AuthContext);
 
   return (
     <Router>
+      <Route exact path="/admin/login">
+        {user ? <Redirect to="/" /> : <Login />}
+      </Route>
       <Switch>
-        {" "}
-        <Route exact path="/login">
-          {user ? <Redirect to="/" /> : <Login />}
-        </Route>
         {user && (
           <>
             <Navbar />
