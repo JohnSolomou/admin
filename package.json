@@ -22,9 +22,9 @@
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start i",
-    "build": "react-scripts --openssl-legacy-provider build",
-    "predeploy": "npm run --openssl-legacy-provider build",
-    "deploy": "gh-pages -d --openssl-legacy-provider build ",
+    "build": "react-scripts build --openssl-legacy-provider build i ",
+    "predeploy": "npm run build --openssl-legacy-provider build i ",
+    "deploy": "gh-pages -d build --openssl-legacy-provider build i ",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
