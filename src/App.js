@@ -18,6 +18,7 @@ import ProductList from "./pages/productList/ProductList";
 import NewMovie from "./pages/newmovie/NewMovie";
 // import HomePage from "./pages/homepage/HomePage";
 import { AuthContext } from "./context/authContext/AuthContext";
+import { Fragment } from "react";
 function App() {
   const { user } = useContext(AuthContext);
 
@@ -28,7 +29,7 @@ function App() {
       </Route>
       <Switch>
         {user && (
-          <>
+          <Fragment>
             <Navbar />
             <div className="container">
               <Sidebar />
@@ -56,7 +57,7 @@ function App() {
                 <NewMovie />
               </Route>
             </div>
-          </>
+          </Fragment>
         )}
       </Switch>
     </Router>
