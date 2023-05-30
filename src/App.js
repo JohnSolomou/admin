@@ -23,49 +23,44 @@ function App() {
   const { user } = useContext(AuthContext);
 
   return (
-    <div>
-      <header>
-        <p>test</p>
-      </header>
-      <Router>
-        <Route exact path="/login">
-          {user ? <Redirect to="/" /> : <Login />}
-        </Route>
-        <Switch>
-          {user && (
-            <Fragment>
-              <Navbar />
-              <div className="container">
-                <Sidebar />
-                <Route exact path="/">
-                  <Home />
-                </Route>
+    <Router>
+      <Route exact path="/">
+        {user ? <Redirect to="/" /> : <Login />}
+      </Route>
+      <Switch>
+        {user && (
+          <Fragment>
+            <Navbar />
+            <div className="container">
+              <Sidebar />
+              <Route exact path="/">
+                <Home />
+              </Route>
 
-                <Route path="/users">
-                  <UserList />
-                </Route>
-                <Route path="/user/:userId">
-                  <User />
-                </Route>
-                <Route path="/newUser">
-                  <NewUser />
-                </Route>
-                <Route path="/movies">
-                  <ProductList />
-                </Route>
-                <Route path="/movie/:productId">
-                  <Product />
-                </Route>
+              <Route path="/users">
+                <UserList />
+              </Route>
+              <Route path="/user/:userId">
+                <User />
+              </Route>
+              <Route path="/newUser">
+                <NewUser />
+              </Route>
+              <Route path="/movies">
+                <ProductList />
+              </Route>
+              <Route path="/movie/:productId">
+                <Product />
+              </Route>
 
-                <Route path="/newMovie">
-                  <NewMovie />
-                </Route>
-              </div>
-            </Fragment>
-          )}
-        </Switch>
-      </Router>
-    </div>
+              <Route path="/newMovie">
+                <NewMovie />
+              </Route>
+            </div>
+          </Fragment>
+        )}
+      </Switch>
+    </Router>
   );
 }
 
