@@ -1,1 +1,1 @@
-export const SERVER_URL = "http://localhost:8800/api";
+export const SERVER_URL = "https://john-solomou-netflix-api.onrender.com/api";
